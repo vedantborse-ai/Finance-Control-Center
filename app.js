@@ -26,7 +26,7 @@ document.getElementById('expenseForm').addEventListener('submit', function (e) {
     } else {
         console.log('Enter a valid amount');
     }
-    
+
     // Clear input fields
     amountField.value = '';
     categoryField.value = '';
@@ -37,7 +37,7 @@ document.getElementById('limitForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const limitField = document.getElementById('monthlyLimit');
     const limitValue = parseFloat(limitField.value);
-    
+
     if (!isNaN(limitValue) && limitValue > 0) {
         monthlyLimit = limitValue;
         document.getElementById('limitStatus').textContent = `Monthly limit set to $${monthlyLimit}`;
@@ -45,7 +45,7 @@ document.getElementById('limitForm').addEventListener('submit', function (e) {
     } else {
         console.log('Enter a valid limit amount');
     }
-    
+
     // Clear input field
     limitField.value = '';
 });
@@ -54,25 +54,23 @@ document.getElementById('subscriptionForm').addEventListener('submit', function 
     e.preventDefault();
     const nameField = document.getElementById('subscriptionName');
     const costField = document.getElementById('subscriptionCost');
-    
+
     const name = nameField.value;
     const cost = parseFloat(costField.value);
-    
+
     if (!isNaN(cost) && cost > 0 && name.trim() !== '') {
         const subscriptionList = document.getElementById('subscriptionList');
         const li = document.createElement('li');
         li.textContent = `${name}: $${cost}/month`;
         subscriptionList.appendChild(li);
-        
-        // Add subscription cost to the subscriptions category
+
+        // Add subscription cost to total subscriptions but NOT to the chart
         subscriptionTotalCost += cost;
-        expenses[3] += cost; // Update the subscriptions category (index 3)
-        updateChart();
         checkLimit(); // Check if added subscription exceeds limit
     } else {
         console.log('Enter valid subscription details');
     }
-    
+
     // Clear input fields
     nameField.value = '';
     costField.value = '';
@@ -115,8 +113,8 @@ function updateChart() {
 // Function to check if expenses exceed monthly limit
 function checkLimit() {
     if (monthlyLimit > 0) {
-        const totalExpenses = expenses.reduce((sum, expense) => sum + expense, 0);
-        
+        const totalExpenses = expenses.reduce((sum, expense) => sum + expense, 0) + subscriptionTotalCost;
+
         if (totalExpenses >= monthlyLimit) {
             window.alert("Monthly spending limit exceeded!");
         }
