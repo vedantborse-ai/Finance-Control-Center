@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: white;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0097a7, #00bcd4);
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+/* Subscription List */
+#subscriptionList {
+    list-style: none;
+    padding: 0;
+}
+
+#subscriptionList li {
+    background: #ecf0f1;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+#subscriptionList li:hover {
+    background: #d5d8dc;
+    transition: background 0.3s ease;
+}
+
+/* Chart */
+#spendingChart {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a2e;
+    color: white;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}

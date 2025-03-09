@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Control Center</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Finance Control Center</h1>
+      <p>Track your expenses, set limits, and visualize your spending habits in a fun way!</p>
+    </header>
+
+    <section class="expense-logger">
+      <h2>📝 Log Your Expense</h2>
+      <form id="expenseForm">
+        <input type="text" id="expenseName" placeholder="Expense Name" required>
+        <input type="number" id="expenseAmount" placeholder="Amount ($)" required>
+        <select id="expenseCategory">
+          <option value="food">🍔 Food</option>
+          <option value="transport">🚗 Transport</option>
+          <option value="entertainment">🎉 Entertainment</option>
+          <option value="clothes">👕 Clothes</option>
+          <option value="other">🤷 Other</option>
+        </select>
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="spending-limits">
+      <h2>🎯 Set Spending Limits</h2>
+      <form id="limitForm">
+        <input type="number" id="monthlyLimit" placeholder="Monthly Limit ($)" required>
+        <button type="submit">Set Limit</button>
+      </form>
+      <p id="limitStatus"></p>
+    </section>
+
+    <section class="subscriptions">
+      <h2>📅 Track Subscriptions</h2>
+      <ul id="subscriptionList"></ul>
+      <form id="subscriptionForm">
+        <input type="text" id="subscriptionName" placeholder="Subscription Name" required>
+        <input type="number" id="subscriptionCost" placeholder="Monthly Cost ($)" required>
+        <button type="submit">Add Subscription</button>
+      </form>
+    </section>
+
+    <section class="spending-visualization">
+      <h2>📊 Spending Visualization</h2>
+      <canvas id="spendingChart"></canvas>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
